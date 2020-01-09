@@ -1,0 +1,170 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: url('../images/movie-bg.jpg'); /*Thanks to Erik Hollander Designs! */
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 80%;
+  font-family: 'Kalam', sans-serif;
+  letter-spacing: 10px;
+  color: white;
+  margin: auto;
+  max-width: 1000px;
+  text-align: center;
+  background-color: rgba(40, 120, 60, 0.7);
+  border: solid 2px black;
+  padding: 20px;
+  border-radius: 10px;
+  /* position: relative;
+  animation: containerin;
+  animation-duration: 1.2s;
+  animation-delay: 3s;
+  animation-fill-mode: forwards;
+  transition: ease-in; */
+}
+
+/* @keyframes containerin {
+  0% {opacity: 0}
+  100% {opacity: 1}
+} */
+
+.header {
+  font-size: 50px;
+}
+
+li, ol, ul {
+  padding: 5px;
+  display: inline-block;
+}
+
+button {
+  margin: 5px;
+  border: 1px solid transparent;
+  padding: .5rem .7rem;
+  font-size: 18px;
+}
+
+.section {
+  margin: 15px auto;
+}
+
+.letter {
+  font-size: 20px;
+  height: 65px;
+  width: 65px;
+  padding: 20px 1px 0 1px;
+  margin-right: 2px;
+  color: transparent;
+  background: blue;
+  border-radius: 5px;
+}
+
+.show {
+  color: #000;
+  background-color: LightSalmon;
+  transition: background-color 1s;
+}
+
+.chosen {
+  background: orange;
+  border-radius: 5px;
+  font-size: 20px;
+  color: #FFFFFF;
+}
+
+.win {
+  background-color: green;
+}
+
+.win a {
+  color: black;
+}
+
+.lose {
+  background-color: red;
+}
+
+.lose a {
+  color: black;
+}
+
+/* Overlay Screen */
+
+#overlay {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  justify-content: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: url('../images/filmreel-bg.jpg');
+  height: 100%;
+  background-position: center;
+  background-repeat:repeat;
+  background-size: cover;
+}
+
+.title {
+  font-size: 4em;
+  position: relative;
+  animation: titlein;
+  animation-duration: .8s;
+}
+
+@keyframes titlein {
+  0% {left: 1000px}
+  100% {left: 0}
+}
+
+.btn-reset{
+    font-size: 2em;
+    position: relative;
+    animation: startin;
+    animation-duration: .8s;
+}
+
+.btn-reset:hover{
+  transform: scale(1.2);
+  transition: 1.1s;
+  color: gold;
+  cursor: pointer;
+}
+
+@keyframes startin {
+  0% {right: 1000px}
+  100% {right: 0}
+}
+
+.popcorn{
+  opacity: 0;
+  margin: 0 auto;
+  height: 100px;
+  width: 100px;
+  position: relative;
+  animation: popcornin;
+  animation-duration: 1s;
+  animation-delay: 1.3s;
+  animation-fill-mode: forwards;
+  transition: ease-in;
+}
+
+@keyframes popcornin {
+  0% {opacity: 0}
+  100% {opacity: 1}
+}
+
+.popcorn:hover {
+  transform: rotate(180deg);
+}
