@@ -88,13 +88,19 @@ function addPhraseToDisplay(arr){
       const ul = phrase.firstElementChild; // Targets the first child element of the ".phrase" class (which is the ul) and assigns it a value of ul.
       ul.appendChild(listItem); // adds a new child element to that ul, which is the list item we created with the stored phrase letter values
 
-      if(arr[i] !== ' '){
-        listItem.classList.add('letter'); // If the new item is not a space (which makes it a letter), give it the styling from ".letter".
-      } else {
-        listItem.style.width = '2em'; // Or if it's an actual space, widen the space so we can visually tell the different phrase words apart.
-      }
+
+      const alphabet = /^[A-Za-z]+$/; // Matches only alphabetic characters
+
+  if (arr[i] !== ' '){
+    listItem.classList.add('letter'); // If the new item is not a space (which makes it a letter), give it the styling from ".letter".
+  } if (!arr[i].match(alphabet)) {
+        listItem.classList.add('show'); // If it's not a letter, then automatically display it in the phrase
+  } else {
+      listItem.style.width = '3em'; // Or if it's an actual space, widen the space so we can visually tell the different phrase words apart.
+    }
   }
 }
+
 
 //Call the function to produce the new string of characters using "phrases" as the parameter, store it into the phraseArray constant. Then call the second function to display that value to the screen
 const phraseArray = getRandomPhraseAsArray(phrases);

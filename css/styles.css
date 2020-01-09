@@ -59,10 +59,12 @@ button {
 }
 
 .letter {
-  font-size: 20px;
+  font-size: none;
+  font-size: 25px;
+  text-align: center;
   height: 65px;
   width: 65px;
-  padding: 20px 1px 0 1px;
+  padding: 16px 1px 0 1px;
   margin-right: 2px;
   color: transparent;
   background: white;
