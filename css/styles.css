@@ -65,13 +65,13 @@ button {
   padding: 20px 1px 0 1px;
   margin-right: 2px;
   color: transparent;
-  background: blue;
+  background: white;
   border-radius: 5px;
 }
 
 .show {
-  color: #000;
-  background-color: LightSalmon;
+  color: white;
+  background-color: navy;
   transition: background-color 1s;
 }
 
