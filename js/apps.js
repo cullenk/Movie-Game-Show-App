@@ -7,9 +7,9 @@ const ul = document.querySelector('#phrase ul');
 // Hide these so they can appear later
 $('.main-container').hide();
 $('.game-screen').hide();
-$('#hint').hide();
 $('.win').hide();
 $('.lose').hide();
+$('.hint').hide();
 
 // When the user clicks the start-game button...
 $(".start-game").click(function() {
@@ -24,7 +24,10 @@ $(".play-again").click(function() { //When user clicks the play again button...
 
   $('.win').hide(); //hide these screens
   $('.lose').hide();
+  $('.hint').text('');
   $('.main-container').fadeIn(); //fade in the game screen again
+  $('.hintTarget').removeClass("hint");
+  $('.lightbulb').removeClass("lightOut");
 
 // Game resets when user clicks on button after they win or lose
   missed = 0 // returns the missed guesses to 0
@@ -36,15 +39,30 @@ $(".play-again").click(function() { //When user clicks the play again button...
         oldPhrase[0].parentNode.removeChild(oldPhrase[0]); // Remove them all
     }
 
-    const phraseArray = getRandomPhraseAsArray(phrases); // Call back the function to bring in a new phrase/letters
-    addPhraseToDisplay(phraseArray);
+    const chosenPhrase = generateRandomPhrase(phrases); // Call back the function to bring in a new phrase
+    const phraseArray = splitPhrase(chosenPhrase); // split that phrase into letters
+    addPhraseToDisplay(phraseArray); //display the new phrase on the board
+
+    // Clear the hint settings and set new index values
+    function getPhraseIndex(arr){
+      const phraseIndex = arr.indexOf(chosenPhrase);
+      return phraseIndex;
+    }
+
+    const hintIndex = getPhraseIndex(phrases);
+    console.log(chosenPhrase);
+    console.log(hintIndex);
+
+    $('.lightbulb').click(function() {
+      $('.lightbulb').addClass("lightOut");
+      $('.hintTarget').addClass("hint").text(hints[hintIndex]);
+    });
 
   // Reset the keyboard
     $(".chosen").each(function(){
     $(this).removeClass('chosen'); // set the class name back to nothing, removing the "chosen" styling
     $(this).removeAttr('disabled'); // remove the disabled atttribute so the user can click on the letters again
 });
-
 
   // Reset hearts
 
@@ -67,7 +85,7 @@ const phrases = [
   "here's looking at you kid",
   "you don't talk about fight club",
   'are the lambs still screaming clarice?',
-  'wilsoooooonnnnn',
+  'wilsoooooonnnnn!',
   'life is like a box of chocolates',
   'let it go',
   'i am iron-man',
@@ -96,7 +114,7 @@ const phrases = [
   "i'm walkin' here!",
   "fish are friends, not food",
   "i'm just one stomach flu away from my goal weight",
-  "bye, felisha",
+  "bye, felicia",
   "you sho is ugly!",
   "king kong ain't got shit on me!"
     ];
@@ -145,13 +163,26 @@ const phrases = [
     "Training Day (2001)"
     ];
 
-//Randomly chooses one of the phrases and splits all of the characters into an array of letters
-
-function getRandomPhraseAsArray(arr){
-  const getRandomPhrase = arr[Math.floor(Math.random() * arr.length)]; //Targets the array and randomly selects one of the phrases
-  const phraseCharacters = getRandomPhrase.split(''); //Splits the phrase that was chosen into separate characters
-  return phraseCharacters; //returns the separate characters, stored in the phraseCharacters value
+//Randomly chooses one of the phrases
+function generateRandomPhrase(arr){
+  const randomPhrase = arr[Math.floor(Math.random() * arr.length)];
+  return randomPhrase;
 }
+
+const chosenPhrase = generateRandomPhrase(phrases); //Puts the random phrase into a variable we can access later
+
+function splitPhrase(arr){ //splits the phrase into individual characters
+  const phraseCharacters = arr.split('');
+  return phraseCharacters;
+}
+
+// const gameHint = arr.indexOf(gamesRandomPhrase);
+
+// function getRandomPhraseAsArray(arr){
+//   const getRandomPhrase = arr[Math.floor(Math.random() * arr.length)]; //Targets the array and randomly selects one of the phrases
+//   const phraseCharacters = getRandomPhrase.split(''); //Splits the phrase that was chosen into separate characters
+//   return phraseCharacters; //returns the separate characters, stored in the phraseCharacters value
+// }
 
 //Function to take that new string of characters and display them to the screen
 
@@ -175,18 +206,25 @@ function addPhraseToDisplay(arr) {
   }
 }
 
-//Call the function to produce the new string of characters using "phrases" as the parameter, store it into the phraseArray constant. Then call the second function to display that value to the screen
-const phraseArray = getRandomPhraseAsArray(phrases);
+//Call the function to split the phrase into characters. Then call the second function to display that value to the screen
+const phraseArray = splitPhrase(chosenPhrase);
 addPhraseToDisplay(phraseArray);
 
-//Show and Hide Hints
+//Obtain the index value of the phrase being used so the right hint can correspond.
 
-// const hintIndex = indexOf(phraseArray);
-//
-// $('#lightbulb').click(function() {
-//
-//  $('#hint h2').text(hints[hintIndex]);
-// });
+function getPhraseIndex(arr){
+  const phraseIndex = arr.indexOf(chosenPhrase);
+  return phraseIndex;
+}
+
+const hintIndex = getPhraseIndex(phrases);
+console.log(chosenPhrase);
+console.log(hintIndex);
+
+$('.lightbulb').click(function() {
+  $('.lightbulb').addClass("lightOut");
+  $('.hintTarget').addClass("hint").text(hints[hintIndex]);
+});
 
 //Create a function to check if the letters the player guesses match the ones from the phrase
 

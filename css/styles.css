@@ -27,6 +27,7 @@ body {
 }
 
 .home-banner {
+  justify-content: space-between;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -36,6 +37,8 @@ body {
 
 .title {
   font-family: 'Kaushan Script', sans-serif;
+  margin-bottom: 0;
+  margin-top: 0;
   color: white;
   font-size: 80px;
   position: relative;
@@ -63,7 +66,7 @@ body {
 .start-game,
 .play-again {
   color: black;
-   text-shadow: 2px 2px gray;
+  text-shadow: 2px 2px gray;
   background-color: rgba(255, 205, 73, 0.4);
   padding: 12px;
   margin-left: auto;
@@ -145,17 +148,60 @@ body {
 
 .lightbulb {
   position: relative;
-  right: 400px;
   height: 100px;
+  width: 100px;
   background-color: rgba(255, 255, 255, 0.6);
   border-radius: 100px;
+  -webkit-transition: transform .6s ease-out;
+  -moz-transition: transform .6s ease-out;
+  -o-transition: transform .6s ease-out;
+  transition: transform .6s ease-out;
 }
 
 .lightbulb:hover {
   cursor: pointer;
+  transform: scale(1.2);
 }
 
+.lightOut {
+  position: relative;
+  animation: lightOut;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes lightOut {
+  0% {transform: rotate(0deg)}
+  100% {transform: rotate(360deg)}
+  0% {opacity: 1}
+  100% {opacity: 0}
+}
+
+.hintTarget {
+  font-size: 2em;
+  margin-bottom: 0;
+}
+
+.hint {
+  position: relative;
+  animation: hintIn;
+  animation-duration: .6s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes hintIn {
+  0% {right: 1000px}
+  100% {right: 0}
+  0% {opacity: 0}
+  100% {opacity: 1}
+}
+
+
 .header {
+  font-family: 'Cinzel', serif;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: rgba(30, 98, 203, 0.6);
   font-size: 50px;
   margin: 0 auto;
 }
@@ -191,7 +237,7 @@ li, ol, ul {
 button:hover {
   cursor: pointer;
   transform: scale(1.1);
-  background-color: navy;
+  background-color: rgba(30, 98, 203, 0.6);;
   color: white;
 }
 
@@ -212,14 +258,23 @@ button:hover {
 
 .show {
   text-transform: uppercase;
+  position: relative;
   font-weight: bold;
   color: black;
   background-color: #ebfaeb;
   transition: background-color 1s;
+  animation: displayletter;
+  animation-duration: .3s;
+}
+
+@keyframes displayletter {
+  0% {transform: scale(1)}
+  50% {transform: scale(1.7) rotate(180deg)}
+  100% {transform: scale(1)}
 }
 
 .chosen {
-  background-color: forestgreen;
+  background-color: rgba(0, 0, 18, 0.5);;
   border-radius: 5px;
   border: 2px solid black;
   font-size: 20px;
@@ -229,7 +284,7 @@ button:hover {
 
 .chosen:hover {
   cursor: auto;
-  background-color: forestgreen;
+  background-color: rgba(0, 0, 18, 0.5);;
   transform: none;
 }
 
