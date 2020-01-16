@@ -58,47 +58,47 @@ $(".play-again").click(function() { //When user clicks the play again button...
 //Array of phrases for game to choose from.
 
 const phrases = [
-  'Life finds a way',
-  "I'm king of the world",
-  'I volunteer as tribute!',
-  'Swish and flick',
-  'One ring to rule them all',
-  "I can't quit you",
-  "Here's looking at you kid",
-  "You don't talk about fight club",
-  'Are the lambs still screaming clarice?',
-  'Wilsoooooonnnnn',
-  'Life is like a box of chocolates',
-  'Let it go',
-  'I am Iron-man',
-  'I coulda been a contender, I coulda been somebody',
-  "I'm gonna make him an offer he can't refuse",
-  'Go ahead, make my day',
-  'May the force be with you',
-  'Show me the money',
-  "I'll have what she's having",
-  'I see dead people',
-  'Say hello to my little friend',
-  "Here's johnny!",
-  'Snap out of it!',
-  'Nobody puts baby in the corner',
-  'How about them apples?',
-  'Great Scott!',
-  'Hakuna Matata',
-  'E.T. phone home',
-  'You wanna know how I got these scars?',
-  'Follow the yellow brick road!',
-  "All right, Mr. DeMille, I'm ready for my close-up",
-  "You're tearing me apart!",
-  "A boy's best friend is his mother",
-  "Mrs. Robinson, you're trying to seduce me",
-  "I'm sorry, Dave. I'm afraid I can't do that",
-  "I'm walkin' here!",
-  "Fish are friends, not food",
-  "I'm just one stomach flu away from my goal weight",
-  "Bye, Felisha",
-  "You sho is ugly!",
-  "King King ain't got shit on me!"
+  'life finds a way',
+  "i'm king of the world",
+  'i volunteer as tribute!',
+  'swish and flick',
+  'one ring to rule them all',
+  "i can't quit you",
+  "here's looking at you kid",
+  "you don't talk about fight club",
+  'are the lambs still screaming clarice?',
+  'wilsoooooonnnnn',
+  'life is like a box of chocolates',
+  'let it go',
+  'i am iron-man',
+  'i coulda been a contender, i coulda been somebody',
+  "i'm gonna make him an offer he can't refuse",
+  'go ahead, make my day',
+  'may the force be with you',
+  'show me the money',
+  "i'll have what she's having",
+  'i see dead people',
+  'say hello to my little friend',
+  "here's johnny!",
+  'snap out of it!',
+  'nobody puts baby in the corner',
+  'how about them apples?',
+  'great scott!',
+  'hakuna matata',
+  'e.t. phone home',
+  'you wanna know how i got these scars?',
+  'follow the yellow brick road!',
+  "all right, mr. demille, i'm ready for my close-up",
+  "you're tearing me apart!",
+  "a boy's best friend is his mother",
+  "mrs. robinson, you're trying to seduce me",
+  "i'm sorry, dave. i'm afraid i can't do that",
+  "i'm walkin' here!",
+  "fish are friends, not food",
+  "i'm just one stomach flu away from my goal weight",
+  "bye, felisha",
+  "you sho is ugly!",
+  "king kong ain't got shit on me!"
     ];
 
   const hints = [
@@ -181,12 +181,12 @@ addPhraseToDisplay(phraseArray);
 
 //Show and Hide Hints
 
-const hintIndex = indexOf(phraseArray);
-
-$('#lightbulb').click(function() {
-
- $('#hint h2').text(hints[hintIndex]);
-});
+// const hintIndex = indexOf(phraseArray);
+//
+// $('#lightbulb').click(function() {
+//
+//  $('#hint h2').text(hints[hintIndex]);
+// });
 
 //Create a function to check if the letters the player guesses match the ones from the phrase
 
