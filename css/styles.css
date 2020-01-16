@@ -4,109 +4,17 @@
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  background: url('../images/movie-bg.jpg'); /*Thanks to Erik Hollander Designs! */
+  margin: 0;
 }
 
-.main-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  height: 80%;
-  font-family: 'Kalam', sans-serif;
-  letter-spacing: 10px;
-  color: white;
-  margin: auto;
-  max-width: 1000px;
-  text-align: center;
-  background-color: rgba(40, 120, 60, 0.7);
-  border: solid 2px black;
-  padding: 20px;
-  border-radius: 10px;
-  /* position: relative;
-  animation: containerin;
-  animation-duration: 1.2s;
-  animation-delay: 3s;
-  animation-fill-mode: forwards;
-  transition: ease-in; */
-}
+/* Home Screen */
 
-/* @keyframes containerin {
-  0% {opacity: 0}
-  100% {opacity: 1}
-} */
-
-.header {
-  font-size: 50px;
-}
-
-li, ol, ul {
-  padding: 5px;
-  display: inline-block;
-}
-
-button {
-  margin: 5px;
-  border: 1px solid transparent;
-  padding: .5rem .7rem;
-  font-size: 18px;
-}
-
-.section {
-  margin: 15px auto;
-}
-
-.letter {
-  font-size: none;
-  font-size: 25px;
-  text-align: center;
-  height: 65px;
-  width: 65px;
-  padding: 16px 1px 0 1px;
-  margin-right: 2px;
-  color: transparent;
-  background: white;
-  border-radius: 5px;
-}
-
-.show {
-  color: white;
-  background-color: navy;
-  transition: background-color 1s;
-}
-
-.chosen {
-  background: orange;
-  border-radius: 5px;
-  font-size: 20px;
-  color: #FFFFFF;
-}
-
-.win {
-  background-color: green;
-}
-
-.win a {
-  color: black;
-}
-
-.lose {
-  background-color: red;
-}
-
-.lose a {
-  color: black;
-}
-
-/* Overlay Screen */
-
-#overlay {
+.home {
   display: flex;
   flex-direction: column;
   position: fixed;
   justify-content: center;
+  text-align: center;
   top: 0;
   bottom: 0;
   left: 0;
@@ -118,55 +26,289 @@ button {
   background-size: cover;
 }
 
+.home-banner {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: auto;
+  background-color: rgba(24, 205, 249, 0.4);
+}
+
 .title {
-  font-size: 4em;
+  font-family: 'Kaushan Script', sans-serif;
+  color: white;
+  font-size: 80px;
   position: relative;
-  animation: titlein;
-  animation-duration: .8s;
+  animation: titleIn;
+  animation-duration: 1.2s;
+  animation-fill-mode: forwards;
+  -webkit-transition: letter-spacing .6s ease-out;
+  -moz-transition: letter-spacing .6s ease-out;
+  -o-transition: letter-spacing .6s ease-out;
+  transition: letter-spacing .6s ease-out;
 }
 
-@keyframes titlein {
+@keyframes titleIn {
   0% {left: 1000px}
-  100% {left: 0}
+  100%{left: 0}
 }
 
-.btn-reset{
-    font-size: 2em;
-    position: relative;
-    animation: startin;
-    animation-duration: .8s;
-}
-
-.btn-reset:hover{
-  transform: scale(1.2);
-  transition: 1.1s;
+.title:hover {
+  letter-spacing: 5px;
   color: gold;
-  cursor: pointer;
+  transition: .6s;
+  transition-timing-function: ease-in-out;
 }
 
-@keyframes startin {
+.start-game,
+.play-again {
+  color: black;
+   text-shadow: 2px 2px gray;
+  background-color: rgba(255, 205, 73, 0.4);
+  padding: 12px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid silver;
+  border-radius: 15px;
+  font-size: 40px;
+  position: relative;
+  animation: startButtonIn;
+  animation-duration: 1.2s;
+  animation-fill-mode: forwards;
+  -webkit-transition: transform .6s ease-out;
+  -moz-transition: transform .6s ease-out;
+  -o-transition: transform .6s ease-out;
+  transition: transform .6s ease-out;
+}
+
+@keyframes startButtonIn {
   0% {right: 1000px}
   100% {right: 0}
 }
 
-.popcorn{
-  opacity: 0;
-  margin: 0 auto;
-  height: 100px;
-  width: 100px;
-  position: relative;
-  animation: popcornin;
-  animation-duration: 1s;
-  animation-delay: 1.3s;
-  animation-fill-mode: forwards;
-  transition: ease-in;
+.start-game:hover,
+.play-again:hover {
+  transform: scale(1.2);
+  transition: 1.1s;
+  background-color: rgba(255, 205, 73, 0.8);
+  cursor: pointer;
 }
 
-@keyframes popcornin {
+.popcorn {
+  position: relative;
+  margin: 0 auto;
+  height: 300px;
+  width: 300px;
+  animation: popcornIn;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  -webkit-transition: transform .6s ease-out;
+  -moz-transition: transform .6s ease-out;
+  -o-transition: transform .6s ease-out;
+  transition: transform .6s ease-out;
+}
+
+@keyframes popcornIn {
   0% {opacity: 0}
   100% {opacity: 1}
 }
 
 .popcorn:hover {
-  transform: rotate(180deg);
+  transform: rotate(360deg);
+}
+
+/* Game Screen */
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: url('../images/movie-bg.jpg'); /*Thanks to Erik Hollander Designs! */
+  overflow-x: hidden;
+}
+
+.game-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 80%;
+  font-family: 'Kalam', sans-serif;
+  color: white;
+  margin: auto;
+  max-width: 1000px;
+  text-align: center;
+  background-color: rgba(40, 120, 60, 0.7);
+  border: solid 2px black;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.lightbulb {
+  position: relative;
+  right: 400px;
+  height: 100px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 100px;
+}
+
+.lightbulb:hover {
+  cursor: pointer;
+}
+
+.header {
+  font-size: 50px;
+  margin: 0 auto;
+}
+
+li, ol, ul {
+  padding: 5px;
+  display: inline-block;
+}
+
+#phrase ul {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  margin: auto;
+  padding: 0;
+}
+
+.keyrow button {
+  text-transform: uppercase;
+  text-align: center;
+  margin: 5px;
+  border: 2px solid black;
+  padding: 20px;
+  font-size: 18px;
+  height: 65px;
+  width: 65px;
+  border-radius: 5px;
+
+}
+
+button:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  background-color: navy;
+  color: white;
+}
+
+.section {
+  margin: 15px auto;
+}
+
+.letter {
+  font-size: 20px;
+  height: 65px;
+  width: 65px;
+  padding: 20px 1px 0 1px;
+  margin-right: 2px;
+  color: transparent;
+  background: white;
+  border-radius: 5px;
+}
+
+.show {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: black;
+  background-color: #ebfaeb;
+  transition: background-color 1s;
+}
+
+.chosen {
+  background-color: forestgreen;
+  border-radius: 5px;
+  border: 2px solid black;
+  font-size: 20px;
+  color: #FFFFFF;
+  border: 1px solid black;
+}
+
+.chosen:hover {
+  cursor: auto;
+  background-color: forestgreen;
+  transform: none;
+}
+
+.win {
+  opacity: 1;
+  height: 100vh;
+  width: 100%;
+  background-image: url('../images/hp.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #343957;
+  display: flex;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  animation: resultsScreenIn;
+  animation-duration: 1.2s;
+  animation-fill-mode: forwards;
+}
+
+.result-banner-win {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: auto;
+  background-color: rgba(40, 120, 60, 0.7);
+}
+
+.success {
+  color: white;
+  background-color: rgba(36, 193, 0, 0.7);
+  text-shadow: 2px 2px gray;
+}
+
+.lose {
+  opacity: 1;
+  height: 100vh;
+  width: 100%;
+  background-image: url('../images/shining.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #343957;
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  animation: resultsScreenIn;
+  animation-duration: 1.2s;
+  animation-fill-mode: forwards;
+}
+
+.result-banner-lose {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: auto;
+  background-color: rgba(241, 23, 41, 0.7);
+}
+
+.sorry {
+  color: white;
+  background-color: rgba(25, 7, 23, 0.8);
+  text-shadow: 2px 2px gray;
+}
+
+@keyframes resultsScreenIn {
+  0% {bottom: 1000px}
+  100% {bottom: 0}
+  0% {opacity: 0}
+  100% {opacity: 1}
 }
