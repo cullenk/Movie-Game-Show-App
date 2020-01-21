@@ -89,7 +89,7 @@ const phrases = [
   'life is like a box of chocolates',
   'let it go',
   'i am iron-man',
-  'i coulda been a contender, i coulda been somebody',
+  'i coulda been somebody',
   "i'm gonna make him an offer he can't refuse",
   'go ahead, make my day',
   'may the force be with you',

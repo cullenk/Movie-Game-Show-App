@@ -21,9 +21,8 @@
   width: 350px;;
   margin: auto;
   background-color: $home-banner-bg;
-  animation: bannerIn;
+  animation: bannerIn 1.2s;
   position: relative;
-  animation-duration: 1.2s;
   animation-fill-mode: forwards;
 }
 
@@ -34,8 +33,7 @@
   color: white;
   font-size: 2em;
   position: relative;
-  animation: titleIn;
-  animation-duration: 1.2s;
+  animation: titleIn 1.2s;
   animation-fill-mode: forwards;
   -webkit-transition: letter-spacing .6s ease-out;
   -moz-transition: letter-spacing .6s ease-out;
@@ -63,8 +61,7 @@
   border-radius: 15px;
   font-size: 20px;
   position: relative;
-  animation: startButtonIn;
-  animation-duration: 1.2s;
+  animation: startButtonIn 1.2s;
   animation-fill-mode: forwards;
   -webkit-transition: transform .6s ease-out;
   -moz-transition: transform .6s ease-out;
@@ -85,8 +82,7 @@
   margin: 0 auto;
   height: 150px;
   width: 150px;
-  animation: popcornIn;
-  animation-duration: 3s;
+  animation: popcornIn 3s;
   animation-fill-mode: forwards;
   -webkit-transition: transform .6s ease-out;
   -moz-transition: transform .6s ease-out;

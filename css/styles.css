@@ -147,9 +147,8 @@ li, ol, ul {
   width: 350px;
   margin: auto;
   background-color: rgba(24, 205, 249, 0.4);
-  animation: bannerIn;
+  animation: bannerIn 1.2s;
   position: relative;
-  animation-duration: 1.2s;
   animation-fill-mode: forwards;
 }
 
@@ -160,8 +159,7 @@ li, ol, ul {
   color: white;
   font-size: 2em;
   position: relative;
-  animation: titleIn;
-  animation-duration: 1.2s;
+  animation: titleIn 1.2s;
   animation-fill-mode: forwards;
   -webkit-transition: letter-spacing 0.6s ease-out;
   -moz-transition: letter-spacing 0.6s ease-out;
@@ -189,8 +187,7 @@ li, ol, ul {
   border-radius: 15px;
   font-size: 20px;
   position: relative;
-  animation: startButtonIn;
-  animation-duration: 1.2s;
+  animation: startButtonIn 1.2s;
   animation-fill-mode: forwards;
   -webkit-transition: transform 0.6s ease-out;
   -moz-transition: transform 0.6s ease-out;
@@ -211,8 +208,7 @@ li, ol, ul {
   margin: 0 auto;
   height: 150px;
   width: 150px;
-  animation: popcornIn;
-  animation-duration: 3s;
+  animation: popcornIn 3s;
   animation-fill-mode: forwards;
   -webkit-transition: transform 0.6s ease-out;
   -moz-transition: transform 0.6s ease-out;
@@ -301,20 +297,19 @@ li, ol, ul {
 
 .lightOut {
   position: relative;
-  animation: lightOut;
-  animation-duration: 1s;
+  animation: lightOut 1s;
   animation-fill-mode: forwards;
 }
 
 .hintTarget {
+  font-family: "Kalam", sans-serif;
   font-size: 2em;
   margin-bottom: 0;
 }
 
 .hint {
   position: relative;
-  animation: hintIn;
-  animation-duration: 0.6s;
+  animation: hintIn 0.6s;
   animation-fill-mode: forwards;
 }
 
@@ -376,8 +371,7 @@ button:hover {
   color: black;
   background-color: rgba(255, 207, 0, 0.9);
   transition: background-color 1s;
-  animation: displayletter;
-  animation-duration: 0.3s;
+  animation: displayletter 0.3s;
 }
 
 .chosen {
@@ -412,8 +406,7 @@ button:hover {
   left: 0;
   right: 0;
   flex-wrap: nowrap;
-  animation: resultsScreenIn;
-  animation-duration: 1.2s;
+  animation: resultsScreenIn 1.2s;
   animation-fill-mode: forwards;
 }
 
@@ -449,8 +442,7 @@ button:hover {
   left: 0;
   right: 0;
   flex-wrap: nowrap;
-  animation: resultsScreenIn;
-  animation-duration: 1.2s;
+  animation: resultsScreenIn 1.2s;
   animation-fill-mode: forwards;
 }
 
