@@ -27,7 +27,7 @@ $(".play-again").click(function() { //When user clicks the play again button...
   $('.hint').text('');
   $('.main-container').fadeIn(); //fade in the game screen again
   $('.hintTarget').removeClass("hint");
-  $('.lightbulb').removeClass("lightOut");
+  $('#hint-icon').removeClass("lightOut");
 
 // Game resets when user clicks on button after they win or lose
   missed = 0 // returns the missed guesses to 0
@@ -53,8 +53,8 @@ $(".play-again").click(function() { //When user clicks the play again button...
     console.log(chosenPhrase);
     console.log(hintIndex);
 
-    $('.lightbulb').click(function() {
-      $('.lightbulb').addClass("lightOut");
+    $('#hint-icon').click(function() {
+      $('#hint-icon').addClass("lightOut");
       $('.hintTarget').addClass("hint").text(hints[hintIndex]);
     });
 
@@ -104,16 +104,16 @@ const phrases = [
   'great scott!',
   'hakuna matata',
   'e.t. phone home',
-  'you wanna know how i got these scars?',
+  'wanna know how i got these scars?',
   'follow the yellow brick road!',
-  "all right, mr. demille, i'm ready for my close-up",
+  "mr. demille, i'm ready for my close-up",
   "you're tearing me apart!",
   "a boy's best friend is his mother",
   "mrs. robinson, you're trying to seduce me",
-  "i'm sorry, dave. i'm afraid i can't do that",
+  "i'm afraid i can't do that dave",
   "i'm walkin' here!",
   "fish are friends, not food",
-  "i'm just one stomach flu away from my goal weight",
+  "is butter a carb?",
   "bye, felicia",
   "you sho is ugly!",
   "king kong ain't got shit on me!"
@@ -157,7 +157,7 @@ const phrases = [
     '2001: A Space Odyssey (1968)',
     'Midnight Cowboy (1969)',
     'Finding Nemo (2003)',
-    "The Devil Wears Prada (2006)",
+    "Mean Girls (2004)",
     "Friday (1995)",
     "The Color Purple (1985)",
     "Training Day (2001)"
@@ -221,8 +221,8 @@ const hintIndex = getPhraseIndex(phrases);
 console.log(chosenPhrase);
 console.log(hintIndex);
 
-$('.lightbulb').click(function() {
-  $('.lightbulb').addClass("lightOut");
+$('#hint-icon').click(function() {
+  $('#hint-icon').addClass("lightOut");
   $('.hintTarget').addClass("hint").text(hints[hintIndex]);
 });
 
