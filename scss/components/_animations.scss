@@ -1,0 +1,72 @@
+
+// Home Screen
+
+@keyframes bannerIn {
+  0% {transform: scale(0);}
+  50%{transform: scale(2);}
+  100%{transform: scale(1);}
+}
+
+@keyframes titleIn {
+  0% {left: 1000px}
+  100%{left: 0}
+}
+
+@keyframes startButtonIn {
+  0% {right: 1000px}
+  100% {right: 0}
+}
+
+@keyframes popcornIn {
+  0% {opacity: 0}
+  100% {opacity: 1}
+}
+
+// Game Screen
+
+/* WebKit and Opera browsers */
+@-webkit-keyframes spinner {
+  from { -webkit-transform: rotateY(0deg);    }
+  to   { -webkit-transform: rotateY(-360deg); }
+}
+
+/* all other browsers */
+@keyframes spinner {
+  from {
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+  to {
+    -moz-transform: rotateY(-360deg);
+    -ms-transform: rotateY(-360deg);
+    transform: rotateY(-360deg);
+  }
+}
+
+@keyframes lightOut {
+  0% {transform: rotate(0deg)}
+  100% {transform: rotate(360deg)}
+  0% {opacity: 1}
+  100% {opacity: 0}
+}
+
+@keyframes hintIn {
+  0% {right: 1000px}
+  100% {right: 0}
+  0% {opacity: 0}
+  100% {opacity: 1}
+}
+
+@keyframes displayletter {
+  0% {transform: scale(1)}
+  50% {transform: scale(1.7) rotate(180deg)}
+  100% {transform: scale(1)}
+}
+
+@keyframes resultsScreenIn {
+  0% {bottom: 1000px}
+  100% {bottom: 0}
+  0% {opacity: 0}
+  100% {opacity: 1}
+}

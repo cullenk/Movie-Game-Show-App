@@ -1,0 +1,99 @@
+/* Home Screen */
+
+.home {
+  @include flexy;
+  position: fixed;
+  justify-content: center;
+  text-align: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: url('../images/filmreel-bg.jpg');
+  height: 100%;
+  @include background-image;
+}
+
+.home-banner {
+  @include flexy;
+  border-radius: 50%;
+  height: 350px;
+  width: 350px;;
+  margin: auto;
+  background-color: $home-banner-bg;
+  animation: bannerIn;
+  position: relative;
+  animation-duration: 1.2s;
+  animation-fill-mode: forwards;
+}
+
+.title {
+  font-family: $font-primary;
+  margin-bottom: 0;
+  margin-top: 0;
+  color: white;
+  font-size: 2em;
+  position: relative;
+  animation: titleIn;
+  animation-duration: 1.2s;
+  animation-fill-mode: forwards;
+  -webkit-transition: letter-spacing .6s ease-out;
+  -moz-transition: letter-spacing .6s ease-out;
+  -o-transition: letter-spacing .6s ease-out;
+  transition: letter-spacing .6s ease-out;
+}
+
+.title:hover {
+  letter-spacing: 5px;
+  color: gold;
+  transition: .6s;
+  transition-timing-function: ease-in-out;
+}
+
+.start-game,
+.play-again {
+  font-family: $font-secondary;
+  color: black;
+  text-shadow: 2px 2px gray;
+  background-color: rgba(255, 205, 73, 0.4);
+  padding: 12px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid silver;
+  border-radius: 15px;
+  font-size: 20px;
+  position: relative;
+  animation: startButtonIn;
+  animation-duration: 1.2s;
+  animation-fill-mode: forwards;
+  -webkit-transition: transform .6s ease-out;
+  -moz-transition: transform .6s ease-out;
+  -o-transition: transform .6s ease-out;
+  transition: transform .6s ease-out;
+}
+
+.start-game:hover,
+.play-again:hover {
+  transform: scale(1.1);
+  transition: 1.1s;
+  background-color: rgba(255, 205, 73, 0.8);
+  cursor: pointer;
+}
+
+.popcorn {
+  position: relative;
+  margin: 0 auto;
+  height: 150px;
+  width: 150px;
+  animation: popcornIn;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  -webkit-transition: transform .6s ease-out;
+  -moz-transition: transform .6s ease-out;
+  -o-transition: transform .6s ease-out;
+  transition: transform .6s ease-out;
+}
+
+.popcorn:hover {
+  transform: rotate(360deg);
+}

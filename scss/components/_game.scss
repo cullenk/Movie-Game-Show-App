@@ -1,0 +1,236 @@
+
+/* Game Screen */
+
+.main-container {
+  @include flexy;
+  height: 100vh;
+  background: url('../images/movie-bg.jpg'); /*Thanks to Erik Hollander Designs! */
+  overflow-x: hidden;
+}
+
+.game-screen {
+  @include flexy;
+  justify-content: space-around;
+  font-family: $font-primary;
+  color: white;
+  margin: 10px auto;
+  width: 100%;
+  max-width: 1200px;
+  text-align: center;
+  background-color: $game-container-bg;
+  border: solid 2px black;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.lightbulb {
+  position: relative;
+  width: 80px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 100px;
+  -webkit-transition: transform .6s ease-out;
+  -moz-transition: transform .6s ease-out;
+  -o-transition: transform .6s ease-out;
+  transition: transform .6s ease-out;
+}
+
+#hint-icon {
+   margin: 25px auto;
+   margin-top: 0;
+   -webkit-perspective: 1200px;
+   -moz-perspective: 1200px;
+   -ms-perspective: 1200px;
+   perspective: 1200px;
+ }
+
+ #spinner {
+   height: 100px;
+    margin: 0 auto;
+   -webkit-animation-name: spinner;
+   -webkit-animation-timing-function: linear;
+   -webkit-animation-iteration-count: infinite;
+   -webkit-animation-duration: 6s;
+
+   animation-name: spinner;
+   animation-timing-function: linear;
+   animation-iteration-count: infinite;
+   animation-duration: 6s;
+
+   -webkit-transform-style: preserve-3d;
+   -moz-transform-style: preserve-3d;
+   -ms-transform-style: preserve-3d;
+   transform-style: preserve-3d;
+ }
+
+ #spinner:hover {
+   -webkit-animation-play-state: paused;
+   animation-play-state: paused;
+   cursor: pointer;
+   transform: scale(1.2);
+ }
+
+.spinner-text {
+  margin: 0;
+  font-size: 1em;
+}
+
+.lightOut {
+  position: relative;
+  animation: lightOut;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.hintTarget {
+  font-size: 2em;
+  margin-bottom: 0;
+}
+
+.hint {
+  position: relative;
+  animation: hintIn;
+  animation-duration: .6s;
+  animation-fill-mode: forwards;
+}
+
+.header {
+  font-family: $font-primary;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: rgba(30, 98, 203, 0.6);
+  font-size: 20px;
+  margin: 0 auto;
+}
+
+#phrase ul {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  margin: auto;
+  padding: 0;
+}
+
+.keyrow button {
+  text-transform: uppercase;
+  text-align: center;
+  margin: 2px;
+  border: 2px solid black;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+button:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  background-color: rgba(30, 98, 203, 0.6);;
+  color: white;
+}
+
+.section {
+  margin: 15px auto;
+}
+
+.letter {
+  font-size: 12px;
+  height: 20px;
+  width: 30px;
+  padding: 2px 1px 0 1px;
+  margin-right: 2px;
+  color: transparent;
+  background: white;
+  border-radius: 5px;
+}
+
+.show {
+  font-family: $font-tertiary;
+  text-transform: uppercase;
+  position: relative;
+  font-weight: bold;
+  color: black;
+  background-color: rgba(255, 207, 0, .9);
+  transition: background-color 1s;
+  animation: displayletter;
+  animation-duration: .3s;
+}
+
+.chosen {
+  background-color: rgba(0, 0, 18, 0.5);;
+  border-radius: 5px;
+  border: 2px solid black;
+  font-size: 10px;
+  color: #FFFFFF;
+  border: 1px solid black;
+}
+
+.chosen:hover {
+  cursor: auto;
+  background-color: rgba(0, 0, 18, 0.5);;
+  transform: none;
+}
+
+.win {
+  opacity: 1;
+  height: 100vh;
+  width: 100%;
+  background-image: url('../images/hp.jpg');
+  @include background-image;
+  background-color: #343957;
+  @include flexy;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  flex-wrap: nowrap;
+  animation: resultsScreenIn;
+  animation-duration: 1.2s;
+  animation-fill-mode: forwards;
+}
+
+.result-banner-win {
+  @include flexy;
+  width: 100%;
+  margin: auto;
+  background-color: rgba(40, 120, 60, 0.7);
+}
+
+.success {
+  color: white;
+  background-color: rgba(36, 193, 0, 0.7);
+  text-shadow: 2px 2px gray;
+}
+
+.lose {
+  opacity: 1;
+  height: 100vh;
+  width: 100%;
+  background-image: url('../images/shining.jpg');
+  @include background-image;
+  background-color: #343957;
+  @include flexy;
+  position: fixed;
+  justify-content: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  flex-wrap: nowrap;
+  animation: resultsScreenIn;
+  animation-duration: 1.2s;
+  animation-fill-mode: forwards;
+}
+
+.result-banner-lose {
+  @include flexy;
+  width: 100%;
+  margin: auto;
+  background-color: rgba(241, 23, 41, 0.7);
+}
+
+.sorry {
+  color: white;
+  background-color: rgba(25, 7, 23, 0.8);
+  text-shadow: 2px 2px gray;
+}

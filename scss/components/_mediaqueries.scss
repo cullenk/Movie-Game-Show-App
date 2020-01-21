@@ -1,0 +1,75 @@
+/* Media Queries */
+
+@media (min-width: $tablet-width){
+
+  .home-banner {
+    justify-content: space-between;
+    border-radius: 0;
+    width: 100%;
+  }
+
+  .title {
+    font-size: 4em;
+  }
+
+  .play-again,
+  .start-game {
+    font-size: 30px;
+  }
+
+  .game-screen {
+    height: 80%;
+    margin: auto;
+    width: 80%;
+  }
+
+  .lightbulb {
+    height: 100px;
+    width: 100px;
+  }
+
+  .spinner-text {
+    font-size: 1.5em;
+  }
+
+  .header {
+    font-size: 40px;
+  }
+
+  .letter {
+    font-size: 18px;
+    height: 55px;
+    width: 65px;
+    padding: 12px 1px 0 1px;
+  }
+
+  .keyrow button {
+    text-transform: uppercase;
+    text-align: center;
+    margin: 5px;
+    border: 2px solid black;
+    height: 45px;
+    width: 45px;
+    border-radius: 5px;
+  }
+}
+
+@media (min-width: $desktop-width){
+
+  .letter {
+    font-size: 20px;
+    width: 65px;
+    padding: 15px 1px 0 1px;
+  }
+
+  .keyrow button {
+    text-transform: uppercase;
+    text-align: center;
+    margin: 8px;
+    border: 2px solid black;
+    height: 55px;
+    width: 55px;
+    border-radius: 5px;
+    font-size: 18px;
+  }
+}
