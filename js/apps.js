@@ -1,4 +1,4 @@
-
+// jshint esversion: 8
 const qwerty = document.getElementById('qwerty');
 const phrase = document.getElementById('phrase');
 var missed = 0;
@@ -30,7 +30,7 @@ $(".play-again").click(function() { //When user clicks the play again button...
   $('#hint-icon').removeClass("lightOut");
 
 // Game resets when user clicks on button after they win or lose
-  missed = 0 // returns the missed guesses to 0
+  missed = 0; // returns the missed guesses to 0
 
   // Reset phrase display board
 
@@ -175,14 +175,6 @@ function splitPhrase(arr){ //splits the phrase into individual characters
   const phraseCharacters = arr.split('');
   return phraseCharacters;
 }
-
-// const gameHint = arr.indexOf(gamesRandomPhrase);
-
-// function getRandomPhraseAsArray(arr){
-//   const getRandomPhrase = arr[Math.floor(Math.random() * arr.length)]; //Targets the array and randomly selects one of the phrases
-//   const phraseCharacters = getRandomPhrase.split(''); //Splits the phrase that was chosen into separate characters
-//   return phraseCharacters; //returns the separate characters, stored in the phraseCharacters value
-// }
 
 //Function to take that new string of characters and display them to the screen
 
