@@ -1,8 +1,13 @@
 // jshint esversion: 8
+const loadingScreen = document.getElementById('loading-screen');
 const qwerty = document.getElementById('qwerty');
 const phrase = document.getElementById('phrase');
 var missed = 0;
 const ul = document.querySelector('#phrase ul');
+
+window.addEventListener('load', function () { //Wait until the page loads...
+  loadingScreen.className += " loaderHidden"; //then remove the loading
+});
 
 // Hide these so they can appear later
 $('.main-container').hide();
